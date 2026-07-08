@@ -109,10 +109,8 @@
   line-height: 82.5%;
   text-shadow: 4px 4px 0 var(--accent-color);
   font-family: var(--text-font);
-
   color: var(--title-color);
   margin-top: 68px;
-  letter-spacing: -0.03em;
   font-style: inherit;
   letter-spacing: 1px;
 }
@@ -120,7 +118,6 @@
 .header__text-block {
   background-color: var(--accent-color);
   display: flex;
-
   margin-bottom: 55px;
 }
 
