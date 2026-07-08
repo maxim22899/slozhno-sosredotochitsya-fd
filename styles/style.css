@@ -1,5 +1,474 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: var(--bg-image);
+  min-height: 100vh;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.header {
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 10px;
+  position: relative;
+}
+
+.rec {
+  position: absolute;
+  top: 10px;
+  right: 38px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  font-family: var(--text-font), monospace;
+}
+
+.rec::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  top: 10px;
+  right: 10px;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  bottom: 10px;
+  left: 10px;
+}
+
+.header__theme-menu {
+  margin-top: 59px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: flex-end;
+  margin-right: 2px;
+}
+
+.header__theme-menu-button {
+  font-family: var(--text-font);
+  padding: 1px 11px;
+  border: 1px solid transparent;
+  font-size: 18px;
+  color: var(--accent-color);
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color);
+  opacity: 0.6;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-family: var(--text-font);
+
+  color: var(--title-color);
+  margin-top: 68px;
+  letter-spacing: -0.03em;
+  font-style: inherit;
+  letter-spacing: 1px;
+}
+
+.header__text-block {
+  background-color: var(--accent-color);
+  display: flex;
+
+  margin-bottom: 55px;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-family: var(--text-font);
+  font-size: 18px;
+  font-weight: bold;
+}
+.header__text {
+  line-height: 23.4px;
+}
+
+.content {
+  padding: 40px 10px 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__title {
+  font-family: var(--text-font);
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 23.4px;
+  color: var(--accent-color);
+}
+
+.section__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__title__light {
+  font-weight: 400;
+}
+
+.section__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card__text {
+  font-family: var(--text-font);
+  font-size: 18px;
+  line-height: 23.4px;
+  font-weight: 400;
+  color: var(--card-text-color);
+}
+
+.link {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--card-text-color);
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--card-text-color);
+  outline-offset: 2px;
+}
+
+.section__gallery {
+  display: flex;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.footer {
+  height: 100vh;
+  min-height: 668px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.footer__titile {
+  font-family: var(--text-font);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .header {
+    min-height: 1024px;
+    padding: 10px;
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .rec {
+    top: 20px;
+    right: 48px;
+  }
+
+  .header__theme-menu {
+    margin-top: 177px;
+  }
+
+  .header__theme-menu-list {
+    margin-right: 11px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    word-spacing: -3px;
+    margin-top: 173px;
+    margin-left: -10px;
+    max-height: min-content;
+  }
+
+  .header__text-block {
+    max-width: 49%;
+    margin-right: 9px;
+    margin-bottom: 173px;
+    justify-self: end;
+  }
+
+  .content {
+    padding: 60px 20px 20px;
+    gap: 80px;
+  }
+
+  .section {
+    flex-direction: row;
+  }
+
+  .section__title {
+    min-width: 236px;
+  }
+
+  .section__column {
+    flex-direction: column;
+  }
+
+  .section__title__column {
+    max-width: 236px;
+  }
+
+  .section__container {
+    flex-direction: column;
+  }
+
+  .section__gallery {
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .image__sunset {
+    grid-column: 1/ 3;
+    grid-row: 1;
+  }
+
+  .image__cassette {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .image__books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .image__street {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+
+  .image__ice-cream {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+    padding: 10px;
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .rec {
+    top: 20px;
+    right: 48px;
+  }
+
+  .header__theme-menu {
+    margin-top: 0px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 9px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    word-spacing: -3px;
+    margin-top: 274px;
+    margin-left: -10px;
+    max-height: min-content;
+  }
+
+  .header__text-block {
+    max-width: 49%;
+    margin-right: 9px;
+    margin-bottom: 124px;
+    justify-self: end;
+  }
+
+  .content {
+    padding: 60px 20px 20px;
+    gap: 80px;
+  }
+
+  .section {
+    flex-direction: row;
+  }
+
+  .section__title {
+    min-width: 314px;
+  }
+
+  .section__column {
+    flex-direction: column;
+  }
+
+  .section__title__column {
+    max-width: 236px;
+  }
+
+  .section__container {
+    flex-direction: column;
+  }
+
+  .section__cards__row {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .card__row {
+    min-width: 315px;
+  }
+
+  .section__gallery {
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .image__sunset {
+    grid-column: 1/ 3;
+    grid-row: 1;
+  }
+
+  .image__cassette {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .image__books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .image__street {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+
+  .image__ice-cream {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .footer__titile {
+    font-family: var(--text-font);
+    font-weight: 700;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    color: var(--title-color);
+  }
 }
