@@ -74,6 +74,7 @@
   gap: 11px;
   align-items: flex-end;
   margin-right: 2px;
+  list-style-type: none;
 }
 
 .header__theme-menu-button {
