@@ -1,12 +1,76 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-image: url("../images/cover-image-dark.png");
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
+  --text-color: #000028;
+  --text-font: "IBM Plex Mono";
+  --card-text-color: #f1b2ce;
+}
+
+.theme-dark .rec {
+  display: block;
+}
+
+.theme-dark .decorated-zone::before,
+.theme-dark .decorated-zone::after {
+  border-color: var(--accent-color);
+}
+
+.theme-dark .section__title {
+    color: var(--accent-color);
+  }
+
+.theme-dark .header__theme-menu-button {
+  color: var(--accent-color);
+}
+
+.theme-dark .header__theme-menu-button_active {
+  border-color: var(--accent-color);
+}
+
+.theme-dark .header__theme-menu-button:hover {
+  border-color: var(--accent-color);
+  opacity: 0.6;
+}
+
+.theme-dark .header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+  outline: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light):not(.theme-dark) {
+    --bg-image: url("../images/cover-image-dark.png");
+    --accent-color: #ff0070;
+    --title-color: #db00ff;
+    --text-color: #000028;
+    --text-font: "IBM Plex Mono";
+    --card-text-color: #f1b2ce;
+  }
+
+  .rec {
+    display: block;
+  }
+
+.decorated-zone::before,
+ .decorated-zone::after {
+  border-color: var(--accent-color);
+}
+
+  .header__theme-menu-button {
+    color: var(--accent-color);
+  }
+
+  .header__theme-menu-button_active {
+    border-color: var(--accent-color);
+  }
+  .header__theme-menu-button:hover {
+    border-color: var(--accent-color);
+    opacity: 0.6;
+  }
+
+  .header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--accent-color);
+    outline: none;
+  }
 }

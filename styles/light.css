@@ -1,12 +1,93 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-image: url("../images/cover-image-light.png");
+  --title-color: #ffc2e6;
+  --text-color: #353430;
+  --card-text-color: var(--text-color);
+  --accent-color: #ff8dcb;
+  --text-font: "IBM Plex Mono";
 }
+
+.theme-light .rec {
+  display: none;
+}
+
+.theme-light .decorated-zone::before,
+.theme-light .decorated-zone::after {
+  border-color: var(--text-color);
+}
+
+.theme-light .header__theme-menu-button {
+  color: var(--text-color);
+}
+
+.theme-light .header__theme-menu-button:active {
+  border-color: var(--text-color);
+}
+
+.theme-light .header__theme-menu-button:hover {
+  border-color: var(--text-color);
+  opacity: 0.6;
+}
+
+.theme-light .header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.theme-light .header__theme-menu-button_active {
+  border-color: var(--text-color);
+}
+
+.theme-light .section__title {
+  color: var(--text-color);
+}
+
+.theme-light .card__text {
+  color: var(--card-text-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.theme-light):not(.theme-dark) {
+    --bg-image: url("../images/cover-image-light.png");
+    --title-color: #ffc2e6;
+    --text-color: #353430;
+    --accent-color: #ff8dcb;
+    --card-text-color: var(--text-color);
+    --text-font: "IBM Plex Mono";
+  }
+
+  .rec {
+    display: none;
+  }
+
+  .decorated-zone::before,
+  .decorated-zone::after {
+    border-color: var(--text-color);
+  }
+
+  .header__theme-menu-button {
+    color: var(--text-color);
+  }
+
+  .header__theme-menu-button:active {
+    border-color: var(--text-color);
+  }
+  .header__theme-menu-button:hover {
+    border-color: var(--text-color);
+  }
+
+  .header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--text-color);
+  }
+
+  .header__theme-menu-button_active {
+    border-color: var(--text-color);
+  }
+
+  .section__title {
+    color: var(--text-color);
+  }
+
+  .card__text {
+    color: var(--card-text-color);
+  }
+}   
