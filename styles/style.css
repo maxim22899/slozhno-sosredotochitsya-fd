@@ -42,24 +42,24 @@
   box-shadow: 0 0 10px var(--accent-color);
 }
 
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-  top: 10px;
-  right: 10px;
-}
-
+.decorated-zone::before,
 .decorated-zone::after {
   content: "";
   position: absolute;
   width: 25px;
   height: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+}
+
+.decorated-zone::before {
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  top: 10px;
+  right: 10px;
+}
+
+.decorated-zone::after {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   bottom: 10px;
   left: 10px;
 }
@@ -82,24 +82,24 @@
   padding: 1px 11px;
   border: 1px solid transparent;
   font-size: 18px;
-  color: var(--accent-color);
+  color: var(--button-text-color);
   text-transform: lowercase;
   background: transparent;
   cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color);
-  opacity: 0.6;
+  border-color: color-mix(in srgb, var(--button-text-color) 40%, transparent);
+ 
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--button-border-color);
   outline: none;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--button-border-color);
   pointer-events: none;
 }
 
@@ -128,6 +128,7 @@
   font-size: 18px;
   font-weight: bold;
 }
+
 .header__text {
   line-height: 23.4px;
 }
@@ -150,7 +151,7 @@
   font-size: 18px;
   font-weight: bold;
   line-height: 23.4px;
-  color: var(--accent-color);
+  color: var(--section-title-color);
 }
 
 .section__cards {
@@ -174,6 +175,7 @@
   flex-direction: column;
   gap: 20px;
 }
+
 .card__text {
   font-family: var(--text-font);
   font-size: 18px;
@@ -230,7 +232,7 @@
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 @media (width >= 768px) and (width < 1024px) {
@@ -417,8 +419,8 @@
   }
 
   .section__cards__row {
-    flex-direction: row;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .card__row {

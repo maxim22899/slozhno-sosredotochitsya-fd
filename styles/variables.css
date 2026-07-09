@@ -5,5 +5,9 @@
   --text-color: #000028;
   --text-font: "IBM Plex Mono";
   --card-text-color: #f1b2ce;
+  --border-color:var(--accent-color);
+  --button-text-color:var(--accent-color);
+  --button-border-color:var(--accent-color);
+  --section-title-color: var(--accent-color);
 }
 
