@@ -90,7 +90,6 @@
 
 .header__theme-menu-button:hover {
   border-color: color-mix(in srgb, var(--button-text-color) 40%, transparent);
- 
 }
 
 .header__theme-menu-button:focus-visible {
